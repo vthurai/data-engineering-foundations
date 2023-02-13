@@ -3,7 +3,9 @@
 ### Python All in One For Dummies - Pages 85 to 123
 ### Python Crash Course - Pages 19 to 36
 
+### Do the Practice Questions in Automate The Boring Stuff With Python - Pages 28 - 29
 
+### ADDITIONAL LESSONS
 
 ## 1. Basic Data Types
 ## 1.a) Number Types
