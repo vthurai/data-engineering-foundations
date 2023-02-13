@@ -30,7 +30,28 @@ print(f'Welcome to {name} python code')
 
 
 ## 3. String Manipulation
+a = "hello there"
+b = "goodbye now"
 
+# String concatenation
+print("a + b")
+
+# Some useful built-in functions that can be used on strings:
+print(a.upper())                # Converts to uppercase
+print(a.lower())                # Converts to lowercase
+print(a.replace("ello", "5"))   # Replaces a specified phrase with another specified phrase
+print(len(a))                   # Gets the length (number of characters) in the string.
+# There are many others. Google is your friend here.
+
+# Strings in Python are *immutable*. They can't be changed once assigned.
+a.replace("there", "friend")
+print(a)                        # Does not change the original string
+
+# You must assign a new string if you want to change the value of the variable.
+a = a.replace("there", "friend")
+print(a)                        # "a" now has new string.
+a += b                          # This is the same as "a = a + b". A useful shorthand form.
+print(a)
 
 ## 4. Date Time and Time zone Offset
 import datetime
