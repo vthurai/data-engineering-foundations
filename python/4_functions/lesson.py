@@ -46,7 +46,7 @@ def change_vars():
 	global num2       # The "global" keyword tells Python that we are defining a variable name in the global scope.
 	num2 = 20
 
-# What is the value of num1 and num2 currently? What is the value of num1 and num2 after calling change_vars()?
+# What is the output of print(num1) and print(num2) currently? What about after calling change_vars()?
 
 # Functions can be nested within one another. Closures are inner functions that are nested.
  
