@@ -9,7 +9,7 @@ def recursive_func():
   recursive_func()
 recursive_func()
 
-# factorial(n) is a function that returns the factorial of a positive integer n.
+# Lets write a function called factorial(n) that returns the factorial of a positive integer n.
 # A factorial is the product of all integers from 1 to n. Eg. factorial(5) = 5*4*3*2*1 = 120.
 
 # How to write a recursive function:
