@@ -34,7 +34,7 @@ z3 = "8"
 
 # 2.a) Print the types of z1, z2, z3.
 
-# 2.b) Convert z1 to an integer and z3 into a float.
+# 2.b) Convert z1 to a float and z3 into an integer.
 
 ## 3. String Manipulation
 a = "hello there"
