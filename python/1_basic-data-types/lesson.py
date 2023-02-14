@@ -28,32 +28,27 @@ print(x * y2)
 print(f'Welcome to {name} python code')
 
 # 2. Data type conversion
+z1 = 16
+z2 = 3.14
+z3 = "8"
 
+# 2.a) Print the types of z1, z2, z3.
 
+# 2.b) Convert z1 to an integer and z3 into a float.
 
 ## 3. String Manipulation
 a = "hello there"
-b = "goodbye now"
+b = "Goodbye now"
+c = ""
 
-# String concatenation
-print("a + b")
+# 3.a) Print the number of characters in each of these strings.
 
-# Some useful built-in functions that can be used on strings:
-print(a.upper())                # Converts to uppercase
-print(a.lower())                # Converts to lowercase
-print(a.replace("ello", "5"))   # Replaces a specified phrase with another specified phrase
-print(len(a))                   # Gets the length (number of characters) in the string.
-# There are many others. Google is your friend here.
+# 3.b) Strings in Python are *immutable*. They can't be changed once assigned.
+print(a.replace("there", "friend"))
+print(a)                              # Does not change the original string.
+# Using replace(), how can you change the string in "a" to say "hello friend"?
 
-# Strings in Python are *immutable*. They can't be changed once assigned.
-a.replace("there", "friend")
-print(a)                        # Does not change the original string
-
-# You must assign a new string if you want to change the value of the variable.
-a = a.replace("there", "friend")
-print(a)                        # "a" now has new string.
-a += b                          # This is the same as "a = a + b". A useful shorthand form.
-print(a)
+# 3.c) Print the 3rd character of "a" and "b". What happens when you try to access the 3rd character of "c"?
 
 ## 4. Date Time and Time zone Offset
 import datetime
