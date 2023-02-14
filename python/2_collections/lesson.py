@@ -1,5 +1,13 @@
 # Collections: Lists, Set, Tuples, Dictionaries
 
+# Read the following before starting
+# Automate The Boring Stuff With Python - Pages 80 to 120
+# Python All in One For Dummies - Pages 147 to 192
+# Python Crash Course - Pages 37 to 74, 95 - 115
+
+# Do the Practice Questions in Automate The Boring Stuff With Python - Pages 102 - 103, 119 - 121
+
+
 # 1. Lists
 # Lists are:
 # Ordered - every element in a list has a unique index, and their order is preserved.
