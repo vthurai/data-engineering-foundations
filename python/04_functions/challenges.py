@@ -6,7 +6,7 @@ print(is_palindrome("racecar")) >> True
 print(is_palindrome("aabbcc")) >> False
 '''
 
-def ispalindrome():
+def is_palindrome():
   pass
 
 
