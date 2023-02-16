@@ -45,7 +45,7 @@ c = ""
 
 # 3.a) Print the number of characters in each of these strings.
 
-# 3.b) Strings in Python are *immutable*. They can't be changed once assigned.
+# 3.b) Strings in Python are *immutable*. They can't be changed once created.
 print(a.replace("there", "friend"))
 print(a)                              # Does not change the original string.
 # Using replace(), how can you change the string in "a" to say "hello friend"?

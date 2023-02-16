@@ -49,7 +49,7 @@ get_users_preorder([('123124', 'pokemon'), ('3432432', 'digimon'), ('123124', 'p
 ### Morning: 8:00 AM to 12:00 PM
 ### Afternoon: 12:00 PM to 4:00 PM
 ### Evening: 4:00 PM to 8:00 PM
-### Night: 8:00 PM to 12:00 PM
+### Night: 8:00 PM to 12:00 AM
 ### The caller of your function will submit a list of dictionary values containing the location, start time
 ### and end time of that trip. Your function should return a nested dictionary containing the hours alloted 
 ### for each period interval for each location.

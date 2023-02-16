@@ -45,7 +45,7 @@ myList2 = [1, 4, 4, 8, 8, 8, 16, 21]
 # Tuples can contain duplicate elements.
 # Tuple items can be any type. Mixing types is allowed.
 
-#3.a)
+# 3.a)
 myTuple1 = (16, "Bob", 3.14, "Charlie")
 myTuple2 = (0, [14, 8], 16)
 # Combine both tuples into one. What does it look like after printing?
