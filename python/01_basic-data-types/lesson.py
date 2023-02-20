@@ -71,5 +71,32 @@ import datetime
 
 # 4.e) Write a python statement that will print the current amount of days till Christmas
 
+# 5. Boolean
+# Booleans only take on two values: True or False
 
-# 5. Boolean 
+is_happy = True
+is_hungry = False
+
+# You can evaluate an integer or float into a boolean using bool().
+# An integer or float with a value of zero will evaluate to True. Any other number will evaluate to False.
+
+print(bool(0))
+print(bool(14))
+print(bool(3.14))
+
+# 5.a) Try evaluating other types to see what they will convert to.
+
+# 6. You can check the type of a variable using type().
+
+print(type("I'm a string"))
+print(type(99))
+
+# 7. "None" is special keyword that denotes no value. None has it's own type: "NoneType".
+
+nothing_here = None
+print(nothing_here)
+print(type(nothing_here))
+
+# None will evaluate to False.
+
+print(bool(None))

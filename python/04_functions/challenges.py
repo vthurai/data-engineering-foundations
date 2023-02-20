@@ -21,3 +21,29 @@ print(get_palindromes("aabbbaa")) >> ['aabbbaa', 'aa', 'abbba', 'bbb', 'bb', 'bb
 
 def get_palindromes():
   pass
+
+
+'''
+QUESTION 3
+Binary Search.
+Write a function called binary_search.
+binary_search takes two arguments: a *sorted* list of numbers, and a number to search for.
+binary_search returns the index of the given number inside the list (You can assume the given number will always be in the list).
+First, try to write this function yourself, and don't use any built-in functions.
+
+Now, try to write the function using the "binary search" method.
+Binary search works as follows:
+Step 1: Pick a point inside the list. The middle of the list would be a good starting point.
+Step 2: If the two numbers are equivalent, then return it's index and we are done.
+Step 3: If the number is not the correct one, compare the two. Search the left side of the list
+        if the chosen number is less than the list number, or the right side if it is greater.
+Step 4: Repeat until the number is found, and return it's index.
+
+print(binary_search([-2, 0, 6, 9, 11, 27], 0)) >> 1
+
+Is this method of searching more "efficient" than the first one you wrote? Why or why not?
+Consider for instance, the steps you take when searching for a word inside a dictionary (a real one, not a Python dict).
+'''
+
+def binary_search():
+  pass

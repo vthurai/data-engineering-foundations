@@ -4,13 +4,13 @@
 # Giving a name to a block of code allows us to re-use that code.
 # You have already seen functions being used. The "def" keyword is used to define a function.
 
-def myFunction():
+def my_function():
   print("Hello World")
   
 # Using a function is known as "invoking" or "calling" a function.
 # A function will not execute any code unless it is invoked.
 
-myFunction()
+my_function()
 
 # A function can take inputs called "arguments". Any number of arguments are allowed.
 
@@ -61,4 +61,5 @@ def outer_function(num):
   print(num)
  
 outer_function(8)
+
 # 2.b) What happens when we remove the "nonlocal num" line? 
