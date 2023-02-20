@@ -103,5 +103,69 @@ get_users_preorder([('123124', 'pokemon'), ('3432432', 'digimon'), ('123124', 'p
 ### }
 ### Note: The times is the result answer are made up to show the expected format.
 
-def get_trip_breakdown(scheudle: list(dict())):
-    return None
+def get_trip_breakdown(schedule: list(dict())):
+    schedule_dicti = {}
+    for place in schedule:
+        breakdown = {"Morning":0, "Afternoon":0, "Evening":0, "Night":0}
+        schedule_dicti[place["location"]] = breakdown
+        timediff = place['end_time'] - place['start_time']
+    
+        #add 4 hours per section per day
+        for section in schedule_dicti[place["location"]]:
+            schedule_dicti[place["location"]][section] += (4 * timediff.days)
+
+        arrive_hour = place['start_time'].hour - 8
+        depart_hour = place['end_time'].hour - 8
+
+        #add hours to section based on the first day
+        if place['start_time'] != place['end_time']:
+            if arrive_hour < 4:
+                schedule_dicti[place["location"]]['Morning'] += (4 - (arrive_hour % 4))
+                schedule_dicti[place["location"]]['Afternoon'] += 4
+                schedule_dicti[place["location"]]['Evening'] += 4
+                schedule_dicti[place["location"]]['Night'] += 4
+            elif arrive_hour < 8:
+                schedule_dicti[place["location"]]['Afternoon'] += (4 - (arrive_hour % 4))
+                schedule_dicti[place["location"]]['Evening'] += 4
+                schedule_dicti[place["location"]]['Night'] += 4
+            elif arrive_hour < 12:
+                schedule_dicti[place["location"]]['Evening'] += (4 - (arrive_hour % 4))
+                schedule_dicti[place["location"]]['Night'] += 4
+            elif arrive_hour < 16:
+                schedule_dicti[place["location"]]['Night'] += (4 - (arrive_hour % 4))
+
+        #subtract hours based on last day since it would be double counted if arrival hour is before departure hour
+        if place['start_time'] < place['end_time']:
+            if depart_hour < 4:
+                schedule_dicti[place["location"]]['Morning'] -= (4 - (depart_hour % 4))
+                schedule_dicti[place["location"]]['Afternoon'] -= 4
+                schedule_dicti[place["location"]]['Evening'] -= 4
+                schedule_dicti[place["location"]]['Night'] -= 4
+            elif depart_hour < 8:
+                schedule_dicti[place["location"]]['Afternoon'] -= (4 - (depart_hour % 4))
+                schedule_dicti[place["location"]]['Evening'] -= 4
+                schedule_dicti[place["location"]]['Night'] -= 4
+            elif depart_hour < 12:
+                schedule_dicti[place["location"]]['Evening'] -= (4 - (depart_hour % 4))
+                schedule_dicti[place["location"]]['Night'] -= 4
+            elif depart_hour < 16:
+                schedule_dicti[place["location"]]['Night'] -= (4 - (depart_hour % 4))
+
+        #add hours based on last day since it would not be accounted for if arrival hour is after departure hour
+        elif place['start_time'] > place['end_time']:
+            if depart_hour < 4:
+                schedule_dicti[place["location"]]['Morning'] += depart_hour % 4  
+            elif depart_hour < 8:
+                schedule_dicti[place["location"]]['Morning'] += 4
+                schedule_dicti[place["location"]]['Afternoon'] += depart_hour % 4
+            elif depart_hour < 12:
+                schedule_dicti[place["location"]]['Morning'] += 4
+                schedule_dicti[place["location"]]['Afternoon'] += 4
+                schedule_dicti[place["location"]]['Evening'] += depart_hour % 4
+            elif depart_hour < 16:
+                schedule_dicti[place["location"]]['Morning'] += 4
+                schedule_dicti[place["location"]]['Afternoon'] += 4
+                schedule_dicti[place["location"]]['Evening'] += 4
+                schedule_dicti[place["location"]]['Night'] += depart_hour % 4
+
+    return schedule_dicti
