@@ -6,7 +6,7 @@ print(is_palindrome("racecar")) >> True
 print(is_palindrome("aabbcc")) >> False
 '''
 
-def is_palindrome():
+def is_palindrome(word):
   return word == word[::-1]
 
 
@@ -19,5 +19,11 @@ print(get_palindromes("racecar")) >> ['racecar', 'aceca', 'cec']
 print(get_palindromes("aabbbaa")) >> ['aabbbaa', 'aa', 'abbba', 'bbb', 'bb', 'bb', 'aa']
 '''
 
-def get_palindromes():
-  pass
+def get_palindromes(word):
+  pal_list = []
+  for i in range(len(word)):
+    for j in range(len(word[i:])):
+        s = word[i: i+j+1]
+        if s == s[::-1] and len(s)>1:
+           pal_list.append(s)
+  return pal_list
