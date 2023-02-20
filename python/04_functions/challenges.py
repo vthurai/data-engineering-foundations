@@ -51,5 +51,20 @@ Is this method of searching more "efficient" than the first one you wrote? Why o
 Consider for instance, the steps you take when searching for a word inside a dictionary (a real one, not a Python dict).
 '''
 
-def binary_search():
-  pass
+def binary_search(lst, num):
+  left = lst[:len(lst)//2]
+  right = lst[len(lst)//2:]
+  idx = len(left)
+  while num != right[0]:
+
+    if num < right[0]:
+      right = left[len(left)//2:]
+      left = left[:len(left)//2]
+      idx -= len(right)
+
+    else:
+      left = right[:len(right)//2]
+      right = right[len(right)//2:]
+      idx += len(left)
+
+  return idx
