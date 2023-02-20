@@ -10,17 +10,18 @@ def recursive_func():
 recursive_func()
 
 # Lets write a function called factorial(n) that returns the factorial of a positive integer n.
-# A factorial is the product of all integers from 1 to n. Eg. factorial(5) = 5*4*3*2*1 = 120.
+# A factorial is the product of all positive integers from 1 to n. Eg. factorial(5) = 5*4*3*2*1 = 120.
 
 # How to write a recursive function:
 # Step 1: Define your base case.
 # A base case is the point at which recursion should stop.
 # (Sometimes it is possible to have multiple base cases.)
 # In our factorial function, the base case is n==1. We don't go any further after that.
+# The base case is our exit condition. Without it, our recursive function will never stop. So don't forget it!
 
 # Step 2: The recursive step.
 # If we have not reached the base case, then we recurse deeper into the function.
-# In our factorial function, we multiply n by the factorial of (n -1). This is where recursion starts.
+# In our factorial function, we multiply n by the factorial of (n-1). This is where recursion starts.
 
 def factorial(n):
   if n == 1:
