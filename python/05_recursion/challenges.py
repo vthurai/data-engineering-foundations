@@ -8,7 +8,12 @@ print(fibonnacci(5)) >> 5
 '''
 
 def fibonnacci(n):
-  pass
+  if n == 1:
+      return 1
+  elif n == 2:
+      return 1
+  else:
+      return fibonnaci(n-2) + fibonnaci(n-1)
 
 
 '''
@@ -33,4 +38,34 @@ print(unsorted) >> [-31, -2, 0, 5, 6, 8, 14, 17, 22, 66]
 '''
 
 def merge_sort(lst):
-  pass
+  if len(lst) < 2:
+    return lst
+  else:
+    i = 0
+    j = 0
+    k = 0
+
+    left = merge_sort(lst[:len(lst)//2])
+    right = merge_sort(lst[len(lst)//2:])
+
+    while i < len(left) and j < len(right):
+      if left[i] <= right[j]:
+        lst[k] = left[i]
+        i += 1
+      else:
+        lst[k] = right[j]
+        j += 1
+      k += 1
+
+    while i < len(left):
+      lst[k] = left[i]
+      i += 1
+      k += 1
+    while j < len(right):
+      lst[k] = right[j]
+      j += 1
+      k += 1
+  
+  return lst
+     
+    
