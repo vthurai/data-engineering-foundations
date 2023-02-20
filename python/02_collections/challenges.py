@@ -9,7 +9,7 @@ import datetime
 ### Write out the function with the least amount of steps as possible
 
 def get_unique_accounts(orders: list) -> list:
-    return None # Change the code inside this function
+    return list(set(orders))
 
 get_unique_accounts(['123124','3432432','123124','123124','2131243','5345232','3432432'])
 # ['123124','3432432','2131243','5345232']
@@ -34,10 +34,16 @@ get_unique_accounts(['123124','3432432','123124','123124','2131243','5345232','3
 ###     '5345232':['pokemon']
 ### }
 def get_users_preorder(orders: list) -> list:
-    return None # Change the code inside this function
+    orders_dict = {}
+    for userid, item in orders:
+        if userid not in orders_dict:
+            orders_dict[userid]=[item]
+        else:
+            orders_dict[userid].append(item)
+    return orders_dict
 
 get_users_preorder([('123124', 'pokemon'), ('3432432', 'digimon'), ('123124', 'pokemon'), 
-    ('123124', 'digimon'),('5345232', 'pokemon'),('2131243', 'medabots'),('2131243', 'digimon')
+    ('123124', 'digimon'),('5345232', 'pokemon'),('2131243', 'medabots'),('2131243', 'digimon'),
     ('123124', 'pokemon'),('123124', 'gundam'),('5345232', 'gundam')])
 
 

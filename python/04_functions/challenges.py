@@ -7,7 +7,7 @@ print(is_palindrome("aabbcc")) >> False
 '''
 
 def is_palindrome():
-  pass
+  return word == word[::-1]
 
 
 '''

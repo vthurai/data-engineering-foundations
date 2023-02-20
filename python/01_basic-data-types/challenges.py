@@ -5,7 +5,10 @@ import datetime
 ## For example, 'banana' should be return as 'banna'
 
 def return_new_string_simple(name: str):
-    return None # Change the code inside this function
+    if name.count('a') > 1:
+        return name[:name.index('a', name.index('a')+1)] + name[name.index('a', name.index('a')+1)+1:]
+    else:
+        return name
 
 assert(return_new_string_simple('banana') == 'banna')
 assert(return_new_string_simple('aaa') == 'aa')
@@ -18,7 +21,14 @@ assert(return_new_string_simple('paper') == 'paper')
 ## E.g. Drop the 3rd 'i' in mississipi --> mississpi
 
 def return_new_string_complex(name: str, char: str, occurance: int):
-    return None # Change the code inside this function
+    if name.count(char) >= occurance:
+        indices = []
+        for num, letter in enumerate(name):
+            if letter == char:
+                indices.append(num)
+        return name[:indices[occurance-1]] + name[indices[occurance-1]+1:]
+    else:
+        return name
 
 assert(return_new_string_complex('banana', 'a', 2) == 'banna')
 assert(return_new_string_complex('mississipi', 'i', 3) == 'mississpi')
@@ -32,4 +42,20 @@ assert(return_new_string_complex('ghost', 's', 2) == 'ghost')
 ## This function should take into account weekends and holidays.
 
 def get_vacation_days(start_date: datetime.date, end_date: datetime.date):
-    return None # Change the code inside this function
+    from datetime import timedelta
+    import holidays
+
+    can_holidays = holidays.CAN
+    num_of_busi_days = int((end_date-start_date).days)+1
+    years = [year for year in range(int(start_date.year), int(end_date.year)+1)]
+ 
+    for n in range(num_of_busi_days):
+        day = start_date + timedelta(n)
+        if day.isoweekday() > 5:
+           print(day.date())
+           num_of_busi_days -= 1
+        elif day.date() in can_holidays(years = years).keys():
+            print(day.date())
+            num_of_busi_days -= 1
+    return num_of_busi_days
+
