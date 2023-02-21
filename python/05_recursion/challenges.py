@@ -22,7 +22,17 @@ Write the binary search function from the previous challenge using recursion thi
 '''
 
 def binary_search_recursive(sorted_list, n):
-  pass
+  left = lst[:len(lst)//2]
+  right = lst[len(lst)//2:]
+
+  if num < right[0]:
+    return binary_search_recursive(left, num)
+
+  elif num > right[0]:
+    return len(left) + binary_search_recursive(right, num)
+  
+  else:
+    return len(left)
 
 
 '''
