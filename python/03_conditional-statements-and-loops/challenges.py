@@ -85,12 +85,10 @@ def input_direction(map, x_pos, y_pos):
         move = input("You can't do that! Where do you want to go? ").lower()
     return move
 
-
 def play_game():
     x_pos = player_x_init
     y_pos = player_y_init
     map = starting_map
-
 
     print("You know Pokemon Red? Yea, the cave, you're looking for a rare item located at the '?'")
     print("You see this map at the entrance.\n")
@@ -99,8 +97,6 @@ def play_game():
     print("Oh, and you forgot your HM05\n")
     print_instructions()
 
-    
-    
     while game_on(map):
         direction = input_direction(map, x_pos, y_pos)
 
