@@ -16,19 +16,34 @@ assert(return_new_string_simple('pineapplepan') == 'pineapplepn')
 assert(return_new_string_simple('mississauga') == 'mississaug')
 assert(return_new_string_simple('paper') == 'paper')
 
-## 2. Using the above written code, modify the code so the user can input the character they want to drop
-## and the at which occurance
-## E.g. Drop the 3rd 'i' in mississipi --> mississpi
+# 2. Using the above written code, modify the code so the user can input the character they want to drop
+# and the at which occurance
+# E.g. Drop the 3rd 'i' in mississipi --> mississpi
 
 def return_new_string_complex(name: str, char: str, occurance: int):
-    if name.count(char) >= occurance:
-        indices = []
-        for num, letter in enumerate(name):
-            if letter == char:
-                indices.append(num)
-        return name[:indices[occurance-1]] + name[indices[occurance-1]+1:]
-    else:
+    if (len(name) - len(name.replace(char,"")) < occurance):
         return name
+    else:
+        temp_name = ""
+        for n in range(0, occurance):
+            pos = name.find(char)
+            temp_name += name[:pos+1]
+            name = name[pos+1:]
+        
+        return(temp_name[:len(temp_name) - 1] + name)
+        
+    # print(pos)
+    # return name[0:pos] + name[pos+1:]
+    # if name.count(char) >= occurance:
+    #     indices = []
+    #     for num, letter in enumerate(name):
+    #         if letter == char:
+    #             indices.append(num)
+    #     return name[:indices[occurance-1]] + name[indices[occurance-1]+1:]
+    # else:
+    #     return name
+
+# print(return_new_string_complex('banana', 'a', 2))
 
 assert(return_new_string_complex('banana', 'a', 2) == 'banna')
 assert(return_new_string_complex('mississipi', 'i', 3) == 'mississpi')
@@ -58,4 +73,3 @@ def get_vacation_days(start_date: datetime.date, end_date: datetime.date):
             print(day.date())
             num_of_busi_days -= 1
     return num_of_busi_days
-
