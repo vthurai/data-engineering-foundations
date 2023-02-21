@@ -122,7 +122,7 @@ def get_trip_breakdown(schedule: list(dict())):
         depart_hour = place['end_time'].hour - 8
 
         #add hours to section based on the first day
-        if place['start_time'] != place['end_time']:
+        if arrive_hour != depart_hour:
             if arrive_hour < 4:
                 schedule_dicti[place["location"]]['Morning'] += (4 - (arrive_hour % 4))
                 schedule_dicti[place["location"]]['Afternoon'] += 4
@@ -139,7 +139,7 @@ def get_trip_breakdown(schedule: list(dict())):
                 schedule_dicti[place["location"]]['Night'] += (4 - (arrive_hour % 4))
 
         #subtract hours based on last day since it would be double counted if arrival hour is before departure hour
-        if place['start_time'] < place['end_time']:
+        if arrive_hour < depart_hour:
             if depart_hour < 4:
                 schedule_dicti[place["location"]]['Morning'] -= (4 - (depart_hour % 4))
                 schedule_dicti[place["location"]]['Afternoon'] -= 4
@@ -156,7 +156,7 @@ def get_trip_breakdown(schedule: list(dict())):
                 schedule_dicti[place["location"]]['Night'] -= (4 - (depart_hour % 4))
 
         #add hours based on last day since it would not be accounted for if arrival hour is after departure hour
-        elif place['start_time'] > place['end_time']:
+        elif arrive_hour > depart_hour:
             if depart_hour < 4:
                 schedule_dicti[place["location"]]['Morning'] += depart_hour % 4  
             elif depart_hour < 8:
