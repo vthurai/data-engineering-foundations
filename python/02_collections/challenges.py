@@ -37,9 +37,13 @@ def get_users_preorder(orders: list) -> list:
     orders_dict = {}
     for userid, item in orders:
         if userid not in orders_dict:
-            orders_dict[userid]=[item]
+            orders_dict[userid]={item}
         else:
-            orders_dict[userid].append(item)
+            orders_dict[userid].add(item)
+    
+    for userid, item in orders:
+            orders_dict[userid] = list(orders_dict[userid])
+
     return orders_dict
 
 get_users_preorder([('123124', 'pokemon'), ('3432432', 'digimon'), ('123124', 'pokemon'), 
