@@ -1,9 +1,9 @@
 import datetime
 
 ### QUESTION 1 ###
-### You are building part of a ticket system that will allow anyone with an account to preorder an item
+### You are building part of a ticket system that will allow anyone with an account to pre-order an item
 ### but only one account is allowed to purchase an item when it is available. Since the system itself
-### is not able to identify whether the account has already made a preorder for such item, you need to
+### is not able to identify whether the account has already made a pre-order for such item, you need to
 ### create a final list of the accounts that are unique for the system to retrieve before placing orders.
 ###
 ### Write out the function with the least amount of steps as possible
@@ -17,10 +17,10 @@ get_unique_accounts(['123124','3432432','123124','123124','2131243','5345232','3
 
 
 ### QUESTION 2 ###
-### Coming back to the system above, you were asked to build the system to handle different items being 
-### ordered. Thus, the ask is to take a list of tuples where each user is preordering a certain
+### Coming back to the system above, you were asked to build the system to handle different items being
+### ordered. Thus, the ask is to take a list of tuples where each user is pre-ordering a certain
 ### item and instead return a dictionary where each value will contain the user and the value would be
-### the list of items allowed to purchasae.
+### the list of items allowed to purchase.
 ###
 ### Argument: List(Tuple(UserId, Item)) 
 ### E.g. 
@@ -37,7 +37,7 @@ def get_users_preorder(orders: list) -> list:
     return None # Change the code inside this function
 
 get_users_preorder([('123124', 'pokemon'), ('3432432', 'digimon'), ('123124', 'pokemon'), 
-    ('123124', 'digimon'),('5345232', 'pokemon'),('2131243', 'medabots'),('2131243', 'digimon')
+    ('123124', 'digimon'),('5345232', 'pokemon'),('2131243', 'medabots'),('2131243', 'digimon'),
     ('123124', 'pokemon'),('123124', 'gundam'),('5345232', 'gundam')])
 
 
@@ -97,5 +97,5 @@ get_users_preorder([('123124', 'pokemon'), ('3432432', 'digimon'), ('123124', 'p
 ### }
 ### Note: The times is the result answer are made up to show the expected format.
 
-def get_trip_breakdown(scheudle: list(dict())):
+def get_trip_breakdown(schedule: list(dict())):
     return None
