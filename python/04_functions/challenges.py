@@ -5,9 +5,8 @@ is_palindrome takes a string as an argument. It returns True if the given string
 print(is_palindrome("racecar")) >> True
 print(is_palindrome("aabbcc")) >> False
 '''
-
 def is_palindrome():
-  pass
+    pass
 
 
 '''
@@ -18,9 +17,8 @@ It returns a list of substrings which are palindromes.
 print(get_palindromes("racecar")) >> ['racecar', 'aceca', 'cec']
 print(get_palindromes("aabbbaa")) >> ['aabbbaa', 'aa', 'abbba', 'bbb', 'bb', 'bb', 'aa']
 '''
-
 def get_palindromes():
-  pass
+    pass
 
 
 '''
@@ -28,7 +26,8 @@ QUESTION 3
 Binary Search.
 Write a function called binary_search.
 binary_search takes two arguments: a *sorted* list of numbers, and a number to search for.
-binary_search returns the index of the given number inside the list (You can assume the given number will always be in the list).
+binary_search returns the index of the given number inside the list.
+(You can assume the given number will always be in the list)
 First, try to write this function yourself, and don't use any built-in functions.
 
 Now, try to write the function using the "binary search" method.
@@ -42,8 +41,7 @@ Step 4: Repeat until the number is found, and return it's index.
 print(binary_search([-2, 0, 6, 9, 11, 27], 0)) >> 1
 
 Is this method of searching more "efficient" than the first one you wrote? Why or why not?
-Consider for instance, the steps you take when searching for a word inside a dictionary (a real one, not a Python dict).
+Consider for instance, the steps you take when searching for a word inside a (real) dictionary.
 '''
-
 def binary_search():
-  pass
+    pass
