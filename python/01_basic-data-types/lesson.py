@@ -58,8 +58,8 @@ is_happy = True
 is_hungry = False
 
 # You can evaluate an integer or float into a boolean using bool().
-# An integer or float with a value of zero will evaluate to True.
-# Any other number will evaluate to False.
+# An integer or float with a value of zero will evaluate to False.
+# Any other number will evaluate to True.
 print(bool(0))
 print(bool(14))
 print(bool(3.14))
