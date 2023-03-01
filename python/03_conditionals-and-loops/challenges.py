@@ -2,16 +2,16 @@
 # 2D Arrays
 # https://www.tutorialspoint.com/python_data_structure/python_2darray.htm
 #
-# You are building a game where your player is moving accross a 10 x 10 array map. The game will have 
+# You are building a game where your player is moving across a 10 x 10 array map. The game will have
 # have the player start from the location (1,2) where x = 1 (second position in the horizontal) and
 # y = 2 (third position in the vertical). Your code should allow the user to navigate around obstacles,
 # prevent the player from going out of bounds, and confirm if the user has made it to the goal.
 
-# Note: 
+# Note:
 #  1) The player will be marked as 'P' on the map and every time the user moves the player the map
 #     should be printed to with the new players location
-#  2) Conditional statements should be used to prevent the player from going out of bounds or into the 
-#     obsstacle areas marked as 'X'
+#  2) Conditional statements should be used to prevent the player from going out of bounds or into the
+#     obstacle areas marked as 'X'
 #  3) Player should be given a win statement when the reach the goal marked with '?'
 
 # Legend:
