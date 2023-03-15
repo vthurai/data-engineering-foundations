@@ -13,7 +13,31 @@ For this question we consider a token as:
 Assume the input string will only contain the characters mentioned above.
 '''
 def tokenize(text):
-    pass
+    tokens = []
+
+    p1 = r'((?<=")(.+)(?="))' #text in quotation, excluding quotes
+    p2 = r'((?<=\()(.+)(?=\)))' #text in parentheses, excluding parentheses
+    p3 = r'(\w+\-\w*)' #hyphenated words
+    p4 = r'(?<=\s)(\w+)' #word with space behind
+    p5 = r'(\w+\'\w*)' #word with apostrophe
+    p6 = r'([^\w\s\-"\(\)])' #other punctuation
+
+    pattern = p1+'|'+p2+'|'+p3+'|'+p4+'|'+p5+'|'+p6
+
+    while len(text) > 0:
+        span = re.search(pattern, text).span()
+        index1 = span[0]
+        index2 = span[1]
+        if re.search(pattern, text):
+            if index1:
+                tokens.append(text[:index1].strip())
+            tokens.append(text[index1:index2].strip())
+            text = text[index2:].strip()
+        else:   #if text entered is just one word or last word left
+            tokens.append(text.strip())
+            text = ''
+
+    print(tokens)
 
 
 '''
@@ -28,7 +52,7 @@ You do not need to check if the keys are unique, only that the syntax is valid.
 Do not use eval or any parsing modules. Try to work out the solution on your own.
 '''
 def is_valid_dict(text):
-    pass
+
 
 
 # Unit tests below.
