@@ -37,7 +37,7 @@ def tokenize(text):
             tokens.append(text.strip())
             text = ''
 
-    print(tokens)
+    return tokens
 
 
 '''
