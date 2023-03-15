@@ -25,10 +25,10 @@ def tokenize(text):
     pattern = p1+'|'+p2+'|'+p3+'|'+p4+'|'+p5+'|'+p6
 
     while len(text) > 0:
-        span = re.search(pattern, text).span()
-        index1 = span[0]
-        index2 = span[1]
         if re.search(pattern, text):
+            span = re.search(pattern, text).span()
+            index1 = span[0]
+            index2 = span[1]
             if index1:
                 tokens.append(text[:index1].strip())
             tokens.append(text[index1:index2].strip())
