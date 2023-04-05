@@ -15,8 +15,8 @@ Assume the input string will only contain the characters mentioned above.
 def tokenize(text):
     tokens = []
 
-    p1 = r'((?<=")(.+)(?="))' #text in quotation, excluding quotes
-    p2 = r'((?<=\()(.+)(?=\)))' #text in parentheses, excluding parentheses
+    p1 = r'((?<=")(.+?)(?="))' #text in quotation, excluding quotes
+    p2 = r'((?<=\()(.+?)(?=\)))' #text in parentheses, excluding parentheses
     p3 = r'(\w+\-\w*)' #hyphenated words
     p4 = r'(?<=\s)(\w+)' #word with space behind
     p5 = r'(\w+\'\w*)' #word with apostrophe
@@ -52,7 +52,7 @@ You do not need to check if the keys are unique, only that the syntax is valid.
 Do not use eval or any parsing modules. Try to work out the solution on your own.
 '''
 def is_valid_dict(text):
-
+    pass
 
 
 # Unit tests below.
